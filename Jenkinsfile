@@ -74,8 +74,7 @@ pipeline {
           args '--user 0:0 -v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
-      steps {
-      	sh 'mvn clean install'
+      steps {      	
         sh 'sam build --template ${SAM_TEMPLATE} --use-container'
         withAWS(
             credentials: env.PIPELINE_USER_CREDENTIAL_ID,
