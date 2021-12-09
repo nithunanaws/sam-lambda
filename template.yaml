@@ -21,7 +21,7 @@ Resources:
         Variables:
           SPRING_CLOUD_FUNCTION_DEFINITION: schedule
           MESSAGE: Welcome
-      Events:
+    Events:
         MyTimer:
         Type: Schedule
         Properties:
