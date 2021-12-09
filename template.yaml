@@ -11,7 +11,7 @@ Resources:
   ScheduledLambdaFunction:
     Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: target/sam-lambda-2.6.1-aws.jar
+      CodeUri: .
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker
       Runtime: java11
       Architectures:
