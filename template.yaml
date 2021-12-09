@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-lambda
+
+Globals:
+  Function:
+    Timeout: 20
+
+Resources:
+  ScheduledLamdaFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: target/sam-lambda-2.6.1-aws.jar
+      Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment: 
+        Variables:
+          SPRING_CLOUD_FUNCTION_DEFINITION: schedule
+          MESSAGE: Welcome
+      Events:
+        MyTimer:
+        Type: Schedule
+        Properties:
+          Input: rate(1 minute)
