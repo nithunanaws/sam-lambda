@@ -8,7 +8,7 @@ Globals:
     Timeout: 20
 
 Resources:
-  ScheduledLamdaFunction:
+  ScheduledLambdaFunction:
     Type: AWS::Serverless::Function 
     Properties:
       CodeUri: target/sam-lambda-2.6.1-aws.jar
@@ -21,8 +21,8 @@ Resources:
         Variables:
           SPRING_CLOUD_FUNCTION_DEFINITION: schedule
           MESSAGE: Welcome
-    Events:
+      Events:
         MyTimer:
-        Type: Schedule
-        Properties:
-          Input: rate(1 minute)
+          Type: Schedule
+          Properties:
+            Input: rate(1 minute)
