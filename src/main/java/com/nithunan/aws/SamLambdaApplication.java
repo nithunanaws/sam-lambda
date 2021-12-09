@@ -18,7 +18,7 @@ public class SamLambdaApplication {
 	}
 	
 	@Bean
-	public Function<String, Void> schedule() {
+	public Function<String, Void> process() {
 		return (input) -> {
 			log.info("Triggered lambda at " + LocalDateTime.now());
 			log.info("Received Message: " + input);			

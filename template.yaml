@@ -19,10 +19,15 @@ Resources:
       MemorySize: 512
       Environment: 
         Variables:
-          SPRING_CLOUD_FUNCTION_DEFINITION: schedule
+          MAIN_CLASS: com.nithunan.aws.SamLambdaApplication
+          SPRING_CLOUD_FUNCTION_DEFINITION: process
           MESSAGE: Welcome
       Events:
-        MyTimer:
+        MySchedule:
           Type: Schedule
           Properties:
-            Input: rate(1 minute)
+            Schedule: 'rate(1 minute)'
+            Name: MySchedule
+            Description: My Test Schedule
+            Enabled: true
+
