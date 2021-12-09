@@ -75,6 +75,7 @@ pipeline {
         }
       }
       steps {
+      	sh 'mvn clean install'
         sh 'sam build --template ${SAM_TEMPLATE} --use-container'
         withAWS(
             credentials: env.PIPELINE_USER_CREDENTIAL_ID,
