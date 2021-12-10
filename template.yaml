@@ -11,7 +11,7 @@ Resources:
   ScheduledLambdaFunction:
     Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: .
+      CodeUri: ScheduledLambdaFunction/
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker
       Runtime: java11
       Architectures:
