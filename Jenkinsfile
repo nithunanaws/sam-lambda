@@ -29,9 +29,6 @@ pipeline {
       when {
         branch env.MAIN_BRANCH
       }
-      environment {
-	      HOME="."
-	  }
       agent {
         docker {
           image 'public.ecr.aws/sam/build-provided'
